@@ -11,10 +11,23 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Введите Ваш рост в сантиметрах: ");
-        height = input.nextDouble();
+       try {
+           height = input.nextDouble();
+       }
+        catch (Exception e) {
+            System.out.println("Ошибка ввода, ,будет присвоено значение роста равное 1");
+            height = 1;
+        }
 
         System.out.print("Введите Ваш вес в килограммах: ");
-        weight = input.nextDouble();
+       try {
+           weight = input.nextDouble();
+       }
+       catch (Exception e)
+       {
+           System.out.println("Ошибка ввода, ,будет присвоено значение веса равное 1");
+           weight = 1;
+       }
 
         bodyMassIndex = Math.round(weight/Math.pow((height/100),2));
         System.out.format("Ваш Индекс массы тела: %.0f %s ", bodyMassIndex,"-");
